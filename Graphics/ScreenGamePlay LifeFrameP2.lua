@@ -1,0 +1,1 @@
+return LoadActor(THEME:GetPathG(ScreenGameplay","LifeFrame"),PLAYER_2);
