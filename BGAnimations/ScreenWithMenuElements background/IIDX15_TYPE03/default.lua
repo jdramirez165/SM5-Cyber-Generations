@@ -45,7 +45,7 @@ local t = Def.ActorFrame {
 	-- [Layer11]
 	LoadActor("SITE")..{
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
-		OnCommand=cmd(blend,'BlendMode_Add';zoom,1.5;diffusealpha,0;;sleep,0.6;linear,0.2;diffusealpha,0.8;zoom,1);
+		OnCommand=cmd(blend,'BlendMode_Add';zoom,1.5;diffusealpha,0;;sleep,0.6;linear,0.2;diffusealpha,0.8;zoom,1;);
 	};
 	-- [Layer20]
 	LoadActor("FLARE.png")..{
