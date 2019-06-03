@@ -33,10 +33,11 @@ local t = Def.ActorFrame{
     CurrentSongChangedMessageCommand=function(self)
         if musicWheel ~= nil then
             local groupName = musicWheel:GetSelectedSection();
-            if (groupName ~= nil or groupName ~= "") and FILEMAN:DoesFileExist(THEME:GetCurrentThemeDirectory().."Graphics/Folder_Logo/"..groupName..".png") then
+            if groupName ~= nil or groupName ~= "" then
                 self:Load(THEME:GetPathG("","Folder_Logo/"..groupName));
 			   self:playcommand("Refresh");
 			   (cmd(;diffusealpha,0;stoptweening;addx,-9;smooth,0.3;addx,9;diffusealpha,1))(self)
+			   FILEMAN:DoesFileExist(THEME:GetCurrentThemeDirectory().."Graphics/Folder_Logo/*.png");
             else
                 self:Load(nil);
             end;
@@ -53,7 +54,7 @@ local t = Def.ActorFrame{
             local groupName = musicWheel:GetSelectedSection();
             if groupName ~= nil or groupName ~= "" then
 			   self:Load(THEME:GetPathB("ScreenSelectMusic","underlay/Flash"));
-			   (cmd(stoptweening;diffusealpha,1;smooth,0.5;diffusealpha,0;blend,'BlendMode_Add'))(self)
+			   (cmd(diffusealpha,1;smooth,0.5;diffusealpha,0;blend,'BlendMode_Add'))(self)
             else
                 self:Load(nil);
             end;
