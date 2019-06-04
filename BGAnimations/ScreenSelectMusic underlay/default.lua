@@ -33,7 +33,8 @@ local t = Def.ActorFrame{
     CurrentSongChangedMessageCommand=function(self)
         if musicWheel ~= nil then
             local groupName = musicWheel:GetSelectedSection();
-            if (groupName ~= nil or groupName ~= "") and FILEMAN:DoesFileExist(THEME:GetCurrentThemeDirectory().."Graphics/Folder_Logo/"..groupName..".png") then
+			SCREENMAN:SystemMessage(THEME:GetCurrentThemeDirectory().."Graphics/Folder_Logo/"..groupName..".png");
+            if (groupName ~= nil or groupName ~= "") and FILEMAN:DoesFileExist("/"..THEME:GetCurrentThemeDirectory().."Graphics/Folder_Logo/"..groupName..".png") then
                 self:Load(THEME:GetPathG("","Folder_Logo/"..groupName));
 			   self:playcommand("Refresh");
 			   (cmd(;diffusealpha,0;stoptweening;addx,-9;smooth,0.3;addx,9;diffusealpha,1))(self)
